@@ -10,7 +10,7 @@ const CartItem = (props) => {
 
   const addItemHandler = () => {
     dispatch(
-      cartActions.addItemsToCart({
+      cartActions.addItemToCart({
         id,
         price,
         title,
@@ -19,7 +19,7 @@ const CartItem = (props) => {
   };
 
   const removeItemsHandler = () => {
-    dispatch(cartActions.removeItemsFromCart(id));
+    dispatch(cartActions.removeItemFromCart(id));
   }
 
   return (
@@ -27,8 +27,8 @@ const CartItem = (props) => {
       <header>
         <h3>{title}</h3>
         <div className={classes.price}>
-          ${price.toFixed(2)}{" "}
-          <span className={classes.itemprice}>(${total.toFixed(2)}/item)</span>
+          ${total.toFixed(2)}{" "}
+          <span className={classes.itemprice}>(${price.toFixed(2)}/item)</span>
         </div>
       </header>
       <div className={classes.details}>
